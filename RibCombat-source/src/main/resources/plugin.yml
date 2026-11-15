@@ -1,0 +1,21 @@
+name: RibCombat
+version: '${project.version}'
+main: dev.rib.combat.RibCombat
+api-version: '1.21'
+description: Combat tagging, safe-zone barriers and combat-log punishment.
+commands:
+  combat:
+    description: Check your combat timer.
+    aliases: [ct, combattag]
+  ribcombat:
+    description: RibCombat admin commands.
+    usage: /ribcombat help
+    permission: ribcombat.admin
+    aliases: [rc]
+permissions:
+  ribcombat.admin:
+    description: Manage regions, reload, tag/untag players.
+    default: op
+  ribcombat.bypass:
+    description: Never gets combat tagged.
+    default: false

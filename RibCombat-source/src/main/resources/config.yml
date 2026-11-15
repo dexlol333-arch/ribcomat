@@ -1,0 +1,90 @@
+# ======================== RibCombat ========================
+# Colors use & codes. Placeholders:
+#   <player>  = the player      <killer> = who they were fighting
+#   <time>    = seconds left    <region> = region name
+# ===========================================================
+
+combat:
+  # How long (seconds) a player stays in combat after hitting / being hit
+  duration: 15
+  # Tag players when they hit each other with arrows, tridents, etc.
+  tag-projectiles: true
+  # Show "In combat: 12s" above the hotbar
+  action-bar: true
+  action-bar-text: "&c&lIN COMBAT &8» &f<time>s"
+  # Stop flying (/fly) when tagged
+  disable-flight: true
+  # Stop elytra gliding when tagged
+  disable-elytra: true
+  # Block ender pearls while tagged
+  block-ender-pearls: false
+  # Block opening these while tagged (ender chests, chests, shulkers, barrels...)
+  block-containers: true
+  blocked-inventories:
+    - ENDER_CHEST
+    - CHEST
+    - BARREL
+    - SHULKER_BOX
+    - HOPPER
+    - DISPENSER
+    - DROPPER
+    - FURNACE
+    - BLAST_FURNACE
+    - SMOKER
+    - BREWING
+    - CRAFTER
+  # Commands that can't be used in combat (without the /)
+  blocked-commands:
+    - spawn
+    - home
+    - homes
+    - tpa
+    - tpahere
+    - tpaccept
+    - warp
+    - warps
+    - rtp
+    - wild
+    - back
+    - hub
+    - lobby
+    - servers
+    - ec
+    - enderchest
+    - echest
+
+combat-log:
+  # Kill players who log out while in combat (their items drop on the ground)
+  kill: true
+  # Don't punish players kicked by the server (restarts, staff kicks)
+  ignore-kicks: true
+  # Strike harmless lightning where they logged out
+  lightning: true
+  # Broadcast to the whole server. Leave empty "" to turn off.
+  broadcast: "&c<player> &7was too big of a bitch and combat logged!"
+
+# What happens when a player in combat walks into a protected region (like spawn)
+barrier:
+  # Show a wall of glass in front of them
+  show-wall: true
+  wall-block: RED_STAINED_GLASS
+  wall-width: 7
+  wall-height: 5
+  # How long the wall stays (seconds)
+  wall-seconds: 3
+  # Knockback strength (2.0 is roughly 10 blocks)
+  knockback: 2.0
+  knockback-up: 0.45
+
+messages:
+  prefix: "&8[&cCombat&8] "
+  tagged: "&cYou are now in combat with &f<killer>&c! Don't log out!"
+  untagged: "&aYou are no longer in combat."
+  not-in-combat: "&aYou are not in combat."
+  combat-time: "&cYou are in combat for &f<time> &cmore seconds."
+  blocked-region: "&cYou can't enter &f<region> &cwhile in combat!"
+  blocked-container: "&cYou can't open that while in combat!"
+  blocked-command: "&cYou can't use that command while in combat!"
+  blocked-pearl: "&cYou can't throw ender pearls while in combat!"
+  blocked-elytra: "&cYou can't use an elytra while in combat!"
+  blocked-teleport: "&cYou can't teleport into &f<region> &cwhile in combat!"
